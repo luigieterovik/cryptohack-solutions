@@ -8,19 +8,19 @@
 <h2>What this is</h2>
 <p>Collection of scripts I wrote to solve CryptoHack (CTF-style) puzzles. Each folder = course/module. Each file = a script named after the puzzle it solves. Purpose: clear, reproducible code you can study after you've solved the challenge.</p>
 
-<h2>Repo layout</h2>
-<pre><code>
+<h2>Repo layout (actual)</h2>
+<pre><code>/
 ├─ README.md
-├─ module-crypto-1/
-│  ├─ requirements.txt
-│  ├─ puzzle-name-1.py
-│  └─ puzzle-name-2.py
-├─ module-crypto-2/
-│  ├─ requirements.txt
-│  ├─ another-puzzle.py
-│  └─ ...
-└─ other-challenges.py
-
+├─ requirements.txt
+├─ "Introduction to CryptoHack"/
+│  ├─ 1. ASCII.py
+│  ├─ 2. HEX.py
+│  └─ ... (scripts for that module)
+├─ "Modular Arithmetic"/
+│  ├─ 1. Greatest Common Divisor.py
+│  └─ ... (scripts for that module)
+├─ "other_challenges.py"
+└─ other files
 </code></pre>
 
 <h2>Rules — read this now</h2>
@@ -30,24 +30,48 @@
   <li><strong>Do not</strong> use these solutions to cheat in active competitions. Be ethical.</li>
 </ul>
 
+<h2>Setup — create &amp; use a virtual environment</h2>
+<p>One command set per OS. Use the one that matches your machine.</p>
+
+<h3>Windows (PowerShell)</h3>
+<pre><code>python -m venv venv
+# If PowerShell blocks scripts, run once:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+</code></pre>
+
+<h3>Linux</h3>
+<pre><code>python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+</code></pre>
+
+<h3>macOS</h3>
+<pre><code>python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt 
+</code></pre>
+
+<p>Verify the venv is active:</p>
+<pre><code>python -c "import sys; print(sys.executable)"
+pip list
+</code></pre>
+
 <h2>Quick run (zero drama)</h2>
 <ol>
   <li>Install Python 3.8+.</li>
+  <li>Create &amp; activate venv (see OS above).</li>
+  <li>Install dependencies:
+    <pre><code>pip install -r requirements.txt</code></pre>
+  </li>
+  <li>Run a script:
+    <pre><code>python "Modular Arithmetic/1. Greatest Common Divisor.py"</code></pre>
+  </li>
 </ol>
-<ol start="2">
-  <li>Install deps (if provided):</li>
-</ol>
-<pre><code>pip install -r requirements.txt
-</code></pre>
-<ol start="3">
-  <li>Run a script:</li>
-</ol>
-<pre><code>python module-crypto-1/puzzle-name-1.py
-</code></pre>
 <p>Some scripts include a top comment explaining expected inputs and how to feed them.</p>
 
 <h2>Typical dependencies</h2>
 <pre><code>pwntools
 pycryptodome
-</code></pre>
 </code></pre>
