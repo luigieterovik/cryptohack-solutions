@@ -1,0 +1,7 @@
+from Crypto.Util.number import *
+
+long_encoded_flag = 11515195063862318899931685488813747395775516287289682636499965282714637259206269
+
+long_to_bytes_convert = long_to_bytes(long_encoded_flag)
+
+print(long_to_bytes_convert)
